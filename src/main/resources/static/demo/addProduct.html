@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+
+    <title>Add product</title>
+</head>
+<body>
+<div id="navbar">
+    <ul id="navbar-list">
+        <li><a href="/get-all-users">All Users</a></li>
+        <li><a href="/product-list">All Products</a></li>
+        <li><a href="http://localhost:8080/demo/addUser.html">Add User</a></li>
+        <li><a href="http://localhost:8080/demo/addProduct.html">Add Product</a></li>
+        <li><a href="http://localhost:8080/demo/deleteProduct.html">Delete product</a></li>
+        <li><a href="http://localhost:8080/demo/updateProduct.html">Update product</a></li>
+    </ul>
+</div>
+<div class="container">
+    <div class="product-container">
+        <h1>Add Product</h1>
+        <form action="/add-product" method="post" class="product-form" th:object="${csrfToken}">
+            <input type="hidden" name="_csrf" th:value="${_csrf.token}" />
+            <input type="text" name="name" id="name" placeholder="Product Name" required>
+            <input type="number" name="price" id="price" placeholder="Product price" required>
+            <input type="number" name="size" id="size" placeholder="Product Size" required>
+            <input type="text" name="color" id="color" placeholder="Product Color" required>
+            <input type="number" name="stock" id="stock" placeholder="Product stock" required>
+            <input type="submit" value="Submit form">
+        </form>
+    </div>
+</div>
+</body>
+</html>

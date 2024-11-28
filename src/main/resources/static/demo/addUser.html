@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../style.css">
+
+  <title>Webshop</title>
+</head>
+<body>
+<div id="navbar">
+  <ul id="navbar-list">
+    <li><a href="/get-all-users">All Users</a></li>
+    <li><a href="/product-list">All Products</a></li>
+    <li><a href="http://localhost:8080/demo/addUser.html">Add User</a></li>
+    <li><a href="http://localhost:8080/demo/addProduct.html">Add Product</a></li>
+    <li><a href="http://localhost:8080/demo/deleteProduct.html">Delete product</a></li>
+    <li><a href="http://localhost:8080/demo/updateProduct.html">Update product</a></li>
+  </ul>
+</div>
+<div class="container">
+  <div class="user-container">
+    <h1>Add User</h1>
+    <form action="/add-user" method="post" class="user-form">
+      <input type="text" name="username" id="username" placeholder="Username" required>
+      <input type="password" name="password" id="password" placeholder="Password" required>
+      <input type="email" name="email" id="email" placeholder="Email" required>
+      <input type="text" name="phone" id="phone" placeholder="Phone" required>
+      <input type="submit" value="Submit form">
+    </form>
+  </div>
+</div>
+</body>
+</html>

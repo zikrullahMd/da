@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Detail</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+<div class="product-detail-container">
+  <div class="product-detail-heading">
+    <h1 th:text="'Details for ' + ${productDetailDTO.name}">Product Details</h1>
+    <button onclick="window.location.href='/product-list'">Back to Catalog</button>
+  </div>
+  <div class="product-detail-content">
+    <p><strong>ID:</strong> <span th:text="${productDetailDTO.id}">ID</span></p>
+    <p><strong>Name:</strong> <span th:text="${productDetailDTO.name}">Product Name</span></p>
+    <p><strong>Price:</strong> $<span th:text="${productDetailDTO.price}">Price</span></p>
+    <p><strong>Size:</strong> <span th:text="${productDetailDTO.size}">Size</span></p>
+    <p><strong>Color:</strong> <span th:text="${productDetailDTO.color}">Color</span></p>
+    <p><strong>Stock:</strong> <span th:text="${productDetailDTO.stock}">Stock</span></p>
+    <div>
+      <a th:href="@{/cart-add/{id}(id=${productDetailDTO.id})}">
+        <button>Add to Cart</button>
+      </a>
+    </div>
+  </div>
+</div>
+</body>
+</html>

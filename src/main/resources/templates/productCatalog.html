@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Catalog</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+<div id="navbar">
+    <ul id="navbar-list">
+        <li><a href="/get-all-users">All Users</a></li>
+        <li><a href="/product-list">All Products</a></li>
+        <li><a href="http://localhost:8080/demo/addUser.html">Add User</a></li>
+        <li><a href="http://localhost:8080/demo/addProduct.html">Add Product</a></li>
+        <li><a href="http://localhost:8080/demo/deleteProduct.html">Delete product</a></li>
+        <li><a href="http://localhost:8080/demo/updateProduct.html">Update product</a></li>
+    </ul>
+</div>
+<div class="product-catalog">
+    <div class="catalog-header">
+        <h1>Product Catalog</h1>
+        <div class="catalog-button">
+            <button onclick="window.location.href='/product-list?edit=true'">Edit Mode</button>
+            <button onclick="window.location.href='/product-list'">View Mode</button>
+        </div>
+
+    </div>
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th th:if="${editMode}">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product : ${productCatalog}">
+            <td><a th:href="@{/product-detail/{id}(id=${product.id})}" th:text="${product.name}">Product Name</a></td>
+            <td th:text="${product.price}"></td>
+            <td th:text="${product.stock}"></td>
+            <td th:if="${editMode}">
+                <a th:href="@{/product-delete/{id}(id=${product.id}, edit=${editMode})}">
+                    <button>Delete</button>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

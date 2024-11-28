@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Product</title>
+
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+<div id="navbar">
+    <ul id="navbar-list">
+        <li><a href="/get-all-users">All Users</a></li>
+        <li><a href="/product-list">All Products</a></li>
+        <li><a href="http://localhost:8080/demo/addUser.html">Add User</a></li>
+        <li><a href="http://localhost:8080/demo/addProduct.html">Add Product</a></li>
+        <li><a href="http://localhost:8080/demo/deleteProduct.html">Delete product</a></li>
+        <li><a href="http://localhost:8080/demo/updateProduct.html">Update product</a></li>
+    </ul>
+</div>
+  <div class="delete-container">
+      <h1>Delete Product</h1>
+      <input type="number" placeholder="Enter product id" id="product-id"/>
+      <button id="delete-button">Delete Product</button>
+        <p id="message"></p>
+      <p id="data"></p>
+  </div>
+</body>
+
+<script src="deleteProductScript.js"></script>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Error</title>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+  <div class="error-message">
+    <h1 th:text="${errorMessage}">Error!!</h1>
+    <a onclick="window.location.href='/product-list'">Go back to catalog</a>
+  </div>
+</body>
+</html>

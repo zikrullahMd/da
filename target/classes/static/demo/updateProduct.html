@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update product</title>
+
+  <link rel="stylesheet" type="text/css" href="../style.css">
+
+</head>
+<body>
+<div id="navbar">
+  <ul id="navbar-list">
+    <li><a href="/get-all-users">All Users</a></li>
+    <li><a href="/product-list">All Products</a></li>
+    <li><a href="http://localhost:8080/demo/addUser.html">Add User</a></li>
+    <li><a href="http://localhost:8080/demo/addProduct.html">Add Product</a></li>
+    <li><a href="http://localhost:8080/demo/deleteProduct.html">Delete product</a></li>
+    <li><a href="http://localhost:8080/demo/updateProduct.html">Update product</a></li>
+  </ul>
+</div>
+
+<div class="update-container">
+  <h1>Update product</h1>
+  <input type="number" name="productId" id="id" placeholder="Enter product Id" required >
+  <button id="get-product">Get product</button>
+  <p id="message"></p>
+  <!--  The error occurs because your form method is set to "put" instead of "post", and HTML forms do not natively -->
+  <!--  support HTTP PUT or DELETE methods. Browsers only support GET and POST for form submissions, so attempting to -->
+  <!--  use PUT results in a 404 Not Found error.-->
+
+  <!--  To resolve this, use JavaScript’s fetch API to handle the form submission and explicitly set the HTTP method to PUT.-->
+  <form id="update-form" action="/update-product/">
+    <input type="text" name="name" id="name" placeholder="Product Name" required>
+    <input type="number" name="price" id="price" placeholder="Product price" required>
+    <input type="text" name="size" id="size" placeholder="Product Size" required>
+    <input type="text" name="color" id="color" placeholder="Product Color" required>
+    <input type="submit" value="Update">
+  </form>
+</div>
+
+  <script src="updateProduct.js"></script>
+</body>
+</html>
